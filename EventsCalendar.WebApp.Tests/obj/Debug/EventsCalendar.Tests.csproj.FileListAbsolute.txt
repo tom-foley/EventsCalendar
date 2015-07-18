@@ -1,0 +1,17 @@
+C:\Users\ph00lz\Source\Repos\EventsCalendar\EventsCalendar.WebApp.Tests\bin\Debug\EventsCalendar.Tests.dll
+C:\Users\ph00lz\Source\Repos\EventsCalendar\EventsCalendar.WebApp.Tests\bin\Debug\EventsCalendar.Tests.pdb
+C:\Users\ph00lz\Source\Repos\EventsCalendar\EventsCalendar.WebApp.Tests\bin\Debug\EventsCalendar.WebApp.dll
+C:\Users\ph00lz\Source\Repos\EventsCalendar\EventsCalendar.WebApp.Tests\bin\Debug\System.Web.Mvc.dll
+C:\Users\ph00lz\Source\Repos\EventsCalendar\EventsCalendar.WebApp.Tests\bin\Debug\System.Web.Razor.dll
+C:\Users\ph00lz\Source\Repos\EventsCalendar\EventsCalendar.WebApp.Tests\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\ph00lz\Source\Repos\EventsCalendar\EventsCalendar.WebApp.Tests\bin\Debug\System.Web.WebPages.dll
+C:\Users\ph00lz\Source\Repos\EventsCalendar\EventsCalendar.WebApp.Tests\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\ph00lz\Source\Repos\EventsCalendar\EventsCalendar.WebApp.Tests\bin\Debug\EventsCalendar.WebApp.pdb
+C:\Users\ph00lz\Source\Repos\EventsCalendar\EventsCalendar.WebApp.Tests\bin\Debug\System.Web.Mvc.xml
+C:\Users\ph00lz\Source\Repos\EventsCalendar\EventsCalendar.WebApp.Tests\bin\Debug\System.Web.Razor.xml
+C:\Users\ph00lz\Source\Repos\EventsCalendar\EventsCalendar.WebApp.Tests\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\ph00lz\Source\Repos\EventsCalendar\EventsCalendar.WebApp.Tests\bin\Debug\System.Web.WebPages.xml
+C:\Users\ph00lz\Source\Repos\EventsCalendar\EventsCalendar.WebApp.Tests\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\ph00lz\Source\Repos\EventsCalendar\EventsCalendar.WebApp.Tests\obj\Debug\EventsCalendar.Tests.csprojResolveAssemblyReference.cache
+C:\Users\ph00lz\Source\Repos\EventsCalendar\EventsCalendar.WebApp.Tests\obj\Debug\EventsCalendar.Tests.dll
+C:\Users\ph00lz\Source\Repos\EventsCalendar\EventsCalendar.WebApp.Tests\obj\Debug\EventsCalendar.Tests.pdb

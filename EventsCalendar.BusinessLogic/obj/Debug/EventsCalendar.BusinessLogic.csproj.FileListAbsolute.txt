@@ -1,0 +1,6 @@
+C:\Users\ph00lz\Source\Repos\EventsCalendar\EventsCalendar.BusinessLogic\bin\Debug\EventsCalendar.BusinessLogic.dll.config
+C:\Users\ph00lz\Source\Repos\EventsCalendar\EventsCalendar.BusinessLogic\bin\Debug\EventsCalendar.BusinessLogic.dll
+C:\Users\ph00lz\Source\Repos\EventsCalendar\EventsCalendar.BusinessLogic\bin\Debug\EventsCalendar.BusinessLogic.pdb
+C:\Users\ph00lz\Source\Repos\EventsCalendar\EventsCalendar.BusinessLogic\obj\Debug\EventsCalendar.BusinessLogic.csprojResolveAssemblyReference.cache
+C:\Users\ph00lz\Source\Repos\EventsCalendar\EventsCalendar.BusinessLogic\obj\Debug\EventsCalendar.BusinessLogic.dll
+C:\Users\ph00lz\Source\Repos\EventsCalendar\EventsCalendar.BusinessLogic\obj\Debug\EventsCalendar.BusinessLogic.pdb

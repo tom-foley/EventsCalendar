@@ -1,0 +1,1 @@
+C:\Users\ph00lz\Source\Repos\EventsCalendar\EventsCalendar.Repositories.NPoco\obj\Debug\EventsCalendar.Repositories.NPoco.csprojResolveAssemblyReference.cache

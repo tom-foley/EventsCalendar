@@ -1,0 +1,57 @@
+﻿<# // Modified Template to generate clean POCOs #>
+<# // Created: January 30, 2015 #>
+<# // Updated: January 30, 2015 #>
+<#
+if (string.IsNullOrEmpty(Namespace)) Namespace=ConnectionStringName;
+if (string.IsNullOrEmpty(RepoName) && !string.IsNullOrEmpty(ConnectionStringName)) RepoName=ConnectionStringName + "DB";
+if (string.IsNullOrEmpty(Namespace)) Namespace="PetaPoco";
+if (string.IsNullOrEmpty(RepoName)) RepoName="PetaPocoDB";
+#>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace <#=Namespace #>
+{
+
+<# if (GeneratePocos) { #>
+<#
+foreach(Table tbl in from t in tables where !t.Ignore select t)
+{
+#>
+    public partial class <#=tbl.ClassName#> 
+    {
+<#
+foreach(Column col in from c in tbl.Columns where !c.Ignore select c)
+{
+		// Column bindings
+#>
+<# if (TrackModifiedColumns) { #>
+
+		public <#=col.PropertyType #><#=CheckNullable(col)#> <#=col.PropertyName #> 
+		{ 
+			get
+			{
+				return _<#=col.PropertyName #>;
+			}
+			set
+			{
+				_<#=col.PropertyName #> = value;
+				MarkColumnModified("<#=col.Name#>");
+			}
+		}
+		<#=col.PropertyType #><#=CheckNullable(col)#> _<#=col.PropertyName #>;
+
+<# } else { #>
+<# if (col.Name!=col.PropertyName) { #>
+		public <#=col.PropertyType #><#=CheckNullable(col)#> <#=col.PropertyName #> { get; set; }
+<# } else { #>
+		public <#=col.PropertyType #><#=CheckNullable(col)#> <#=col.PropertyName #> { get; set; }
+<# } #>
+<# } #>
+<# } #>
+	}
+<# } #>
+<# } #>
+}
