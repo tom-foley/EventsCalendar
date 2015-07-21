@@ -39,10 +39,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EventService.cs" />
+    <Compile Include="EventTypeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepeatTypeService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EventsCalendar.Interfaces\EventsCalendar.Interfaces.csproj">
+      <Project>{50ba800e-0b4c-48ad-994e-9fd06418137f}</Project>
+      <Name>EventsCalendar.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EventsCalendar.Models\EventsCalendar.Models.csproj">
+      <Project>{34e986ee-7de0-47c9-891d-23c2fdc19592}</Project>
+      <Name>EventsCalendar.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EventsCalendar.Repositories.NPoco\EventsCalendar.Repositories.NPoco.csproj">
+      <Project>{bb740095-7cb2-4d35-8cf3-db634fde82f6}</Project>
+      <Name>EventsCalendar.Repositories.NPoco</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -41,13 +41,14 @@
   <ItemGroup>
     <Compile Include="IUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\IEventsRepository.cs" />
+    <Compile Include="Repositories\IEventRepository.cs" />
     <Compile Include="Repositories\IEventTypeRepository.cs" />
     <Compile Include="Repositories\IRepeatTypeRepository.cs" />
+    <Compile Include="Services\IEventRepository.cs" />
+    <Compile Include="Services\IEventTypeRepository.cs" />
+    <Compile Include="Services\IRepeatTypeRepository.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\EventsCalendar.Models\EventsCalendar.Models.csproj">
       <Project>{34e986ee-7de0-47c9-891d-23c2fdc19592}</Project>

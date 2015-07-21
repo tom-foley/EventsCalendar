@@ -11,7 +11,7 @@
 //     Schema:                 ``
 //     Include Views:          `False`
 //
-//     Last Generated:         `7/18/2015 2:23:17 AM`
+//     Last Generated:         `7/20/2015 10:45:29 PM`
 
 using System;
 using System.Collections.Generic;
@@ -23,7 +23,7 @@ namespace EventsCalendar.Models
 
     public partial class Event 
     {
-		public long EventId { get; set; }
+		public long EventID { get; set; }
 		public int EventType { get; set; }
 		public string EventTitle { get; set; }
 		public string EventDesc { get; set; }
@@ -34,12 +34,12 @@ namespace EventsCalendar.Models
 	}
     public partial class EventType 
     {
-		public int TypeId { get; set; }
+		public int TypeID { get; set; }
 		public string TypeDesc { get; set; }
 	}
     public partial class RepeatType 
     {
-		public int TypeId { get; set; }
+		public int TypeID { get; set; }
 		public string TypeDesc { get; set; }
 	}
 }

@@ -8,6 +8,16 @@ namespace EventsCalendar.Models
 {
     public interface IOperationResult
     {
+        bool IsError { get; set; }
+
+        string ErrorMessage { get; set; }
+
+        string CustomMessage { get; set; }
+
+        string StackTrace { get; set; }
+
+        string InnerException { get; set; }
+
         void Reset();
     }
 
@@ -15,7 +25,7 @@ namespace EventsCalendar.Models
     {
         public bool IsError { get; set; }
 
-        public long RecordId { get; set; }
+        public long RecordID { get; set; }
 
         public string ErrorMessage { get; set; }
 
@@ -38,9 +48,9 @@ namespace EventsCalendar.Models
         public DBOperationResult(Exception ex)
         {
             this.IsError = true;
-            this.ErrorMessage = ex.Message;
-            this.StackTrace = ex.StackTrace.ToString();
-            this.InnerException = ex.InnerException.ToString();
+            if (ex.Message != null) this.ErrorMessage = ex.Message;
+            if (ex.StackTrace != null) this.StackTrace = ex.StackTrace.ToString();
+            if (ex.InnerException != null) this.InnerException = ex.InnerException.ToString();
         }
 
         public void Reset()

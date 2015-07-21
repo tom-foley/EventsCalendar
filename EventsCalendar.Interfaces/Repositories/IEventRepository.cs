@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EventsCalendar.Interfaces.Repositories
+namespace EventsCalendar.Interfaces.Services
 {
-    public partial interface IEventsRepository
+    public partial interface IEventRepository
     {
         IUnitOfWork UnitOfWork { get; set; }
 

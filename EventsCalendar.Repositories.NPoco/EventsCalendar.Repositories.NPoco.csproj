@@ -45,11 +45,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EventsRepository.cs" />
+    <Compile Include="EventRepository.cs" />
+    <Compile Include="EventTypeRepository.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="NPocoDatabaseFactoryClass.cs" />
     <Compile Include="NPocoModelMappings.cs" />
     <Compile Include="NPocoUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepeatTypeRepository.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
