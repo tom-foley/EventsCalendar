@@ -9,6 +9,10 @@
 <body>
     @Html.Partial("~/Views/Shared/_Nav.cshtml")
 
-    @RenderBody()
+    <div class="main-content">
+        @RenderBody()
+    </div>
+
+    <script src="~/Scripts/site.min.js"></script>
 </body>
 </html>

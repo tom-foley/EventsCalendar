@@ -112,12 +112,6 @@
     <Content Include="Content\css\dimens.min.css">
       <DependentUpon>dimens.css</DependentUpon>
     </Content>
-    <Content Include="Content\css\drawer.css">
-      <DependentUpon>drawer.scss</DependentUpon>
-    </Content>
-    <Content Include="Content\css\drawer.min.css">
-      <DependentUpon>drawer.css</DependentUpon>
-    </Content>
     <Content Include="Content\css\nav.css">
       <DependentUpon>nav.scss</DependentUpon>
     </Content>
@@ -132,6 +126,9 @@
     </Content>
     <Content Include="Global.asax" />
     <Content Include="Scripts\site.js" />
+    <Content Include="Scripts\site.min.js">
+      <DependentUpon>site.js</DependentUpon>
+    </Content>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -151,7 +148,6 @@
     <Content Include="Content\css\site.scss" />
     <Content Include="Content\css\calendar.scss" />
     <Content Include="Content\css\nav.scss" />
-    <Content Include="Content\css\drawer.scss" />
     <Content Include="Content\css\site.css.map">
       <DependentUpon>site.css</DependentUpon>
     </Content>
@@ -170,8 +166,8 @@
     <Content Include="Content\css\calendar.css.map">
       <DependentUpon>calendar.css</DependentUpon>
     </Content>
-    <Content Include="Content\css\drawer.css.map">
-      <DependentUpon>drawer.css</DependentUpon>
+    <Content Include="Scripts\site.min.js.map">
+      <DependentUpon>site.min.js</DependentUpon>
     </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

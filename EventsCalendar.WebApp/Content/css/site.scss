@@ -10,8 +10,19 @@ body {
     padding: 0;
     width: 100%;
     height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.v-align {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    position: relative;
+}
+
+span.v-align {
+    display: block;
 }
 
 //@import 'calendar';
-//@import 'drawer';
 @import 'nav';
