@@ -23,6 +23,6 @@ namespace EventsCalendar.Interfaces.Services
 
         IOperationResult DeleteEvent(Event ev);
 
-        IEnumerable<Event> GetAllEvents();
+        List<Event> GetAllEvents();
     }
 }

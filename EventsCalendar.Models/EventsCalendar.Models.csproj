@@ -48,7 +48,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DBOperationResult.cs" />
     <Compile Include="Generated\Poco.Generator.cs">
       <DependentUpon>Poco.Generator.ttinclude</DependentUpon>
       <AutoGen>True</AutoGen>

@@ -1,4 +1,6 @@
-﻿using EventsCalendar.Interfaces.Services;
+﻿using EventsCalendar.Interfaces;
+using EventsCalendar.Interfaces.Repositories;
+using EventsCalendar.Interfaces.Services;
 using EventsCalendar.Models;
 using System;
 using System.Collections.Generic;
@@ -36,7 +38,7 @@ namespace EventsCalendar.BusinessLogic
 
 
         /*  ----- Public Methods ----- */
-        public DBOperationResult CreateEvent(Event ev)
+        public IOperationResult CreateEvent(Event ev)
         {
             Result.Reset();
 
@@ -48,7 +50,7 @@ namespace EventsCalendar.BusinessLogic
                 Result.CustomMessage = "There was a problem creating the Event";
             }
 
-            return (DBOperationResult)Result;
+            return Result;
         }
 
         public Event ReadEvent(long eventID)
@@ -71,7 +73,7 @@ namespace EventsCalendar.BusinessLogic
             return ev;
         }
 
-        public DBOperationResult UpdateEvent(Event ev)
+        public IOperationResult UpdateEvent(Event ev)
         {
             Result.Reset();
 
@@ -79,14 +81,13 @@ namespace EventsCalendar.BusinessLogic
 
             if (Result.IsError)
             {
-                Result = eventContext.Result;
                 Result.CustomMessage = "There was a problem updating the requested Event";
             }
 
-            return (DBOperationResult)Result;
+            return Result;
         }
 
-        public DBOperationResult UpdateEvent(Event ev, string[] fieldsToUpdate)
+        public IOperationResult UpdateEvent(Event ev, string[] fieldsToUpdate)
         {
             Result.Reset();
 
@@ -94,14 +95,13 @@ namespace EventsCalendar.BusinessLogic
 
             if (Result.IsError)
             {
-                Result = eventContext.Result;
                 Result.CustomMessage = "There was a problem updating the requested Event";
             }
 
-            return (DBOperationResult)Result;
+            return Result;
         }
 
-        public DBOperationResult DeleteEvent(long eventID)
+        public IOperationResult DeleteEvent(long eventID)
         {
             Result.Reset();
 
@@ -109,14 +109,13 @@ namespace EventsCalendar.BusinessLogic
 
             if (Result.IsError)
             {
-                Result = eventContext.Result;
                 Result.CustomMessage = "There was a problem deleting the requested Event";
             }
 
-            return (DBOperationResult)Result;
+            return Result;
         }
 
-        public DBOperationResult DeleteEvent(Event ev)
+        public IOperationResult DeleteEvent(Event ev)
         {
             Result.Reset();
 
@@ -124,11 +123,10 @@ namespace EventsCalendar.BusinessLogic
 
             if (Result.IsError)
             {
-                Result = eventContext.Result;
                 Result.CustomMessage = "There was a problem deleting the requested Event";
             }
 
-            return (DBOperationResult)Result;
+            return Result;
         }
 
         public List<Event> GetAllEvents()

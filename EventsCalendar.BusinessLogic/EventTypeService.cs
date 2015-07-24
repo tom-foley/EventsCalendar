@@ -1,4 +1,6 @@
-﻿using EventsCalendar.Interfaces.Services;
+﻿using EventsCalendar.Interfaces;
+using EventsCalendar.Interfaces.Repositories;
+using EventsCalendar.Interfaces.Services;
 using EventsCalendar.Models;
 using System;
 using System.Collections.Generic;
@@ -36,7 +38,7 @@ namespace EventsCalendar.BusinessLogic
 
 
         /*  ----- Public Methods ----- */
-        public DBOperationResult CreateEventType(EventType eventType)
+        public IOperationResult CreateEventType(EventType eventType)
         {
             Result.Reset();
 
@@ -48,7 +50,7 @@ namespace EventsCalendar.BusinessLogic
                 Result.CustomMessage = "There was a problem creating the EventType";
             }
 
-            return (DBOperationResult)Result;
+            return Result;
         }
 
         public EventType ReadEventType(long eventTypeID)
@@ -71,7 +73,7 @@ namespace EventsCalendar.BusinessLogic
             return eventType;
         }
 
-        public DBOperationResult UpdateEventType(EventType eventType)
+        public IOperationResult UpdateEventType(EventType eventType)
         {
             Result.Reset();
 
@@ -83,10 +85,10 @@ namespace EventsCalendar.BusinessLogic
                 Result.CustomMessage = "There was a problem updating the requested EventType";
             }
 
-            return (DBOperationResult)Result;
+            return Result;
         }
 
-        public DBOperationResult UpdateEventType(EventType eventType, string[] fieldsToUpdate)
+        public IOperationResult UpdateEventType(EventType eventType, string[] fieldsToUpdate)
         {
             Result.Reset();
 
@@ -98,10 +100,10 @@ namespace EventsCalendar.BusinessLogic
                 Result.CustomMessage = "There was a problem updating the requested EventType";
             }
 
-            return (DBOperationResult)Result;
+            return Result;
         }
 
-        public DBOperationResult DeleteEventType(long eventTypeID)
+        public IOperationResult DeleteEventType(long eventTypeID)
         {
             Result.Reset();
 
@@ -113,10 +115,10 @@ namespace EventsCalendar.BusinessLogic
                 Result.CustomMessage = "There was a problem deleting the requested EventType";
             }
 
-            return (DBOperationResult)Result;
+            return Result;
         }
 
-        public DBOperationResult DeleteEventType(EventType eventType)
+        public IOperationResult DeleteEventType(EventType eventType)
         {
             Result.Reset();
 
@@ -128,7 +130,7 @@ namespace EventsCalendar.BusinessLogic
                 Result.CustomMessage = "There was a problem deleting the requested EventType";
             }
 
-            return (DBOperationResult)Result;
+            return Result;
         }
 
         public List<EventType> GetAllEventTypes()

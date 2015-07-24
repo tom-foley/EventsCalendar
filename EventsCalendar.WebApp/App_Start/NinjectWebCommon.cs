@@ -10,6 +10,13 @@ namespace EventsCalendar.WebApp.App_Start
 
     using Ninject;
     using Ninject.Web.Common;
+    using EventsCalendar.Interfaces.Services;
+    using EventsCalendar.Repositories.NPoco;
+    using EventsCalendar.BusinessLogic;
+    using EventsCalendar.Interfaces;
+    using EventsCalendar.Models;
+    using EventsCalendar.Interfaces.Repositories;
+    using EventsCalendar.Repositories;
 
     public static class NinjectWebCommon 
     {
@@ -61,6 +68,16 @@ namespace EventsCalendar.WebApp.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            kernel.Bind<IUnitOfWork>().To<NPocoUnitOfWork>();
+            kernel.Bind<IOperationResult>().To<DBOperationResult>();
+
+            kernel.Bind<IEventRepository>().To<EventRepository>();
+            kernel.Bind<IEventTypeRepository>().To<EventTypeRepository>();
+            kernel.Bind<IRepeatTypeRepository>().To<RepeatTypeRepository>();
+
+            kernel.Bind<IEventService>().To<EventService>();
+            kernel.Bind<IEventTypeService>().To<EventTypeService>();
+            kernel.Bind<IRepeatTypeService>().To<RepeatTypeService>();
         }        
     }
 }

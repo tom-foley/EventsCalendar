@@ -1,5 +1,4 @@
 ﻿using EventsCalendar.Models;
-using EventsCalendar.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +23,6 @@ namespace EventsCalendar.Interfaces.Services
 
         IOperationResult DeleteEventType(EventType eventType);
 
-        IEnumerable<EventType> GetAllEventTypes();
+        List<EventType> GetAllEventTypes();
     }
 }

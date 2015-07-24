@@ -1,26 +1,12 @@
-﻿using System;
+﻿using EventsCalendar.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EventsCalendar.Models
+namespace EventsCalendar.Repositories
 {
-    public interface IOperationResult
-    {
-        bool IsError { get; set; }
-
-        string ErrorMessage { get; set; }
-
-        string CustomMessage { get; set; }
-
-        string StackTrace { get; set; }
-
-        string InnerException { get; set; }
-
-        void Reset();
-    }
-
     public class DBOperationResult : IOperationResult
     {
         public bool IsError { get; set; }

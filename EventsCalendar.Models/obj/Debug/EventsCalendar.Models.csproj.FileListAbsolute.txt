@@ -1,4 +1,3 @@
-C:\Users\ph00lz\Source\Repos\EventsCalendar\EventsCalendar.Models\obj\Debug\EventsCalendar.Models.csprojResolveAssemblyReference.cache
 C:\Users\ph00lz\Source\Repos\EventsCalendar\EventsCalendar.Models\bin\Debug\EventsCalendar.Models.dll.config
 C:\Users\ph00lz\Source\Repos\EventsCalendar\EventsCalendar.Models\bin\Debug\EventsCalendar.Models.dll
 C:\Users\ph00lz\Source\Repos\EventsCalendar\EventsCalendar.Models\bin\Debug\EventsCalendar.Models.pdb
@@ -8,3 +7,4 @@ C:\Users\ph00lz\Source\Repos\EventsCalendar\EventsCalendar.Models\bin\Debug\Enti
 C:\Users\ph00lz\Source\Repos\EventsCalendar\EventsCalendar.Models\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\ph00lz\Source\Repos\EventsCalendar\EventsCalendar.Models\obj\Debug\EventsCalendar.Models.dll
 C:\Users\ph00lz\Source\Repos\EventsCalendar\EventsCalendar.Models\obj\Debug\EventsCalendar.Models.pdb
+C:\Users\ph00lz\Source\Repos\EventsCalendar\EventsCalendar.Models\obj\Debug\EventsCalendar.Models.csprojResolveAssemblyReference.cache

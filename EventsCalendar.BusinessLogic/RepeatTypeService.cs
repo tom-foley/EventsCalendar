@@ -1,5 +1,8 @@
-﻿using EventsCalendar.Interfaces.Services;
+﻿using EventsCalendar.Interfaces;
+using EventsCalendar.Interfaces.Repositories;
+using EventsCalendar.Interfaces.Services;
 using EventsCalendar.Models;
+using EventsCalendar.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,7 +39,7 @@ namespace EventsCalendar.BusinessLogic
 
 
         /*  ----- Public Methods ----- */
-        public DBOperationResult CreateRepeatType(RepeatType repeatType)
+        public IOperationResult CreateRepeatType(RepeatType repeatType)
         {
             Result.Reset();
 
@@ -48,7 +51,7 @@ namespace EventsCalendar.BusinessLogic
                 Result.CustomMessage = "There was a problem creating the RepeatType";
             }
 
-            return (DBOperationResult)Result;
+            return Result;
         }
 
         public RepeatType ReadRepeatType(long repeatTypeID)
@@ -71,7 +74,7 @@ namespace EventsCalendar.BusinessLogic
             return repeatType;
         }
 
-        public DBOperationResult UpdateRepeatType(RepeatType repeatType)
+        public IOperationResult UpdateRepeatType(RepeatType repeatType)
         {
             Result.Reset();
 
@@ -83,10 +86,10 @@ namespace EventsCalendar.BusinessLogic
                 Result.CustomMessage = "There was a problem updating the requested RepeatType";
             }
 
-            return (DBOperationResult)Result;
+            return Result;
         }
 
-        public DBOperationResult UpdateRepeatType(RepeatType repeatType, string[] fieldsToUpdate)
+        public IOperationResult UpdateRepeatType(RepeatType repeatType, string[] fieldsToUpdate)
         {
             Result.Reset();
 
@@ -98,10 +101,10 @@ namespace EventsCalendar.BusinessLogic
                 Result.CustomMessage = "There was a problem updating the requested RepeatType";
             }
 
-            return (DBOperationResult)Result;
+            return Result;
         }
 
-        public DBOperationResult DeleteRepeatType(long repeatTypeID)
+        public IOperationResult DeleteRepeatType(long repeatTypeID)
         {
             Result.Reset();
 
@@ -113,10 +116,10 @@ namespace EventsCalendar.BusinessLogic
                 Result.CustomMessage = "There was a problem deleting the requested RepeatType";
             }
 
-            return (DBOperationResult)Result;
+            return Result;
         }
 
-        public DBOperationResult DeleteRepeatType(RepeatType repeatType)
+        public IOperationResult DeleteRepeatType(RepeatType repeatType)
         {
             Result.Reset();
 
@@ -128,7 +131,7 @@ namespace EventsCalendar.BusinessLogic
                 Result.CustomMessage = "There was a problem deleting the requested RepeatType";
             }
 
-            return (DBOperationResult)Result;
+            return Result;
         }
 
         public List<RepeatType> GetAllRepeatTypes()

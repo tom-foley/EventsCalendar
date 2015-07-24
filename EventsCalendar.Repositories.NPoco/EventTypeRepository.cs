@@ -1,4 +1,5 @@
 ﻿using EventsCalendar.Interfaces;
+using EventsCalendar.Interfaces.Repositories;
 using EventsCalendar.Interfaces.Services;
 using EventsCalendar.Models;
 using System;

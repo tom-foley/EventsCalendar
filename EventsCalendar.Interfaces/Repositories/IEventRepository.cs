@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EventsCalendar.Interfaces.Services
+namespace EventsCalendar.Interfaces.Repositories
 {
     public partial interface IEventRepository
     {

@@ -1,0 +1,21 @@
+﻿@import 'colors';
+@import 'dimens';
+
+
+div#nav {
+    width: 100%;
+    position: relative;
+    background-color: $nav-bg;
+}
+
+@media all and (min-width: 320px) {
+    div#nav {
+        height: $nav-sm-height;
+    }    
+}
+
+@media all and (min-width: 992px) {
+    div#nav {
+        height: $nav-lg-height;
+    }
+}

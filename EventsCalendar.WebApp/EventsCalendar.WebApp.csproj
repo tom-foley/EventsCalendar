@@ -94,7 +94,44 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\calendar.css">
+      <DependentUpon>calendar.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\css\calendar.min.css">
+      <DependentUpon>calendar.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\colors.css">
+      <DependentUpon>colors.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\css\colors.min.css">
+      <DependentUpon>colors.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\dimens.css">
+      <DependentUpon>dimens.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\css\dimens.min.css">
+      <DependentUpon>dimens.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\drawer.css">
+      <DependentUpon>drawer.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\css\drawer.min.css">
+      <DependentUpon>drawer.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\nav.css">
+      <DependentUpon>nav.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\css\nav.min.css">
+      <DependentUpon>nav.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\site.css">
+      <DependentUpon>site.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\css\site.min.css">
+      <DependentUpon>site.css</DependentUpon>
+    </Content>
     <Content Include="Global.asax" />
+    <Content Include="Scripts\site.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -109,6 +146,33 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
+    <Content Include="Views\Shared\_MainLayout.cshtml" />
+    <Content Include="Views\Events\Index.cshtml" />
+    <Content Include="Content\css\site.scss" />
+    <Content Include="Content\css\calendar.scss" />
+    <Content Include="Content\css\nav.scss" />
+    <Content Include="Content\css\drawer.scss" />
+    <Content Include="Content\css\site.css.map">
+      <DependentUpon>site.css</DependentUpon>
+    </Content>
+    <Content Include="Views\Shared\_Nav.cshtml" />
+    <Content Include="Content\css\nav.css.map">
+      <DependentUpon>nav.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\colors.scss" />
+    <Content Include="Content\css\dimens.scss" />
+    <Content Include="Content\css\colors.css.map">
+      <DependentUpon>colors.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\dimens.css.map">
+      <DependentUpon>dimens.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\calendar.css.map">
+      <DependentUpon>calendar.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\drawer.css.map">
+      <DependentUpon>drawer.css</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -118,7 +182,25 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Events\" />
+    <Folder Include="Content\icons\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EventsCalendar.BusinessLogic\EventsCalendar.BusinessLogic.csproj">
+      <Project>{8f295442-7849-453a-a3c3-ec2d11617179}</Project>
+      <Name>EventsCalendar.BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EventsCalendar.Interfaces\EventsCalendar.Interfaces.csproj">
+      <Project>{50ba800e-0b4c-48ad-994e-9fd06418137f}</Project>
+      <Name>EventsCalendar.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EventsCalendar.Models\EventsCalendar.Models.csproj">
+      <Project>{34e986ee-7de0-47c9-891d-23c2fdc19592}</Project>
+      <Name>EventsCalendar.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EventsCalendar.Repositories.NPoco\EventsCalendar.Repositories.NPoco.csproj">
+      <Project>{bb740095-7cb2-4d35-8cf3-db634fde82f6}</Project>
+      <Name>EventsCalendar.Repositories.NPoco</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,0 +1,12 @@
+﻿{
+	"version": 3,
+	"file": "nav.css",
+	"sources": [
+		"nav.scss",
+		"colors.scss",
+		"dimens.scss"
+	],
+	"sourcesContent": [],
+	"mappings": "AAIG,GAAG,AAAA,IAAI,CAAF;EACJ,KAAK,EAAE,IAAK;EACZ,QAAQ,EAAE,QAAS;EACnB,gBAAgB,ECPX,OAAO;CDIP;;AAMT,MAAM,CAAN,GAAG,MAAM,SAAS,EAAE,KAAK;EAClB,GAAG,AAAA,IAAI,CAAF;IACJ,MAAM,EEZE,IAAI;GFWP;;;AAKb,MAAM,CAAN,GAAG,MAAM,SAAS,EAAE,KAAK;EAClB,GAAG,AAAA,IAAI,CAAF;IACJ,MAAM,EEjBE,IAAI;GFgBP",
+	"names": []
+}

@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DBOperationResult.cs" />
     <Compile Include="EventRepository.cs" />
     <Compile Include="EventTypeRepository.cs">
       <SubType>Code</SubType>

@@ -24,6 +24,6 @@ namespace EventsCalendar.Interfaces.Services
 
         IOperationResult DeleteRepeatType(RepeatType repeatType);
 
-        IEnumerable<RepeatType> GetAllRepeatTypes();
+        List<RepeatType> GetAllRepeatTypes();
     }
 }
