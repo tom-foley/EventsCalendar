@@ -28,15 +28,17 @@ div.nav-header {
         z-index: 899;
         position: fixed;
         background-color: $nav-bg;
-        
         -webkit-transition: left 0.5s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+        -moz-transition: left 0.5s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+        -o-transition: left 0.5s cubic-bezier(0.465, 0.183, 0.153, 0.946);
         transition: left 0.5s cubic-bezier(0.465, 0.183, 0.153, 0.946);
     }
 
     div#drawer.active {
         left: 0;
-
         -webkit-transition: left 0.5s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+        -moz-transition: left 0.5s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+        -o-transition: left 0.5s cubic-bezier(0.465, 0.183, 0.153, 0.946);
         transition: left 0.5s cubic-bezier(0.465, 0.183, 0.153, 0.946);
     }
 
@@ -62,6 +64,8 @@ div.nav-header {
     button.drawer-btn-container.active {
         left: 300px;
         -webkit-transition: left 0.5s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+        -moz-transition: left 0.5s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+        -o-transition: left 0.5s cubic-bezier(0.465, 0.183, 0.153, 0.946);
         transition: left 0.5s cubic-bezier(0.465, 0.183, 0.153, 0.946);
     }
 }
