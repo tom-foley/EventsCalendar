@@ -15,30 +15,47 @@ div.nav-header {
     color: lighten($nav-bg, 50%);
 }
 
-@media all and (min-width: 320px) and (max-width: 991px) {
-    div#nav {
-        z-index: 999;
-    }
+div#drawer {
+    div.drawer-content {
+        width: 100%;
+        height: 100%;
+        position: relative;
 
+        ul {
+            width: 75%;
+            padding: 0;
+            margin: 15px auto;
+
+            li {
+                width: 100%;
+                height: 30px;
+
+                span {
+                    color: $white;  
+                }
+            }
+        }
+    }
+}
+
+@media all and (min-width: 320px) and (max-width: 991px) {
     div#drawer {
         top: $nav-sm-height;
         left: -($drawer-width);
         width: $drawer-width;
         height: 100%;
-        z-index: 899;
         position: fixed;
         background-color: $nav-bg;
+        border-top: 1px solid $dark-red;
+        
         -webkit-transition: left 0.5s cubic-bezier(0.465, 0.183, 0.153, 0.946);
-        -moz-transition: left 0.5s cubic-bezier(0.465, 0.183, 0.153, 0.946);
-        -o-transition: left 0.5s cubic-bezier(0.465, 0.183, 0.153, 0.946);
         transition: left 0.5s cubic-bezier(0.465, 0.183, 0.153, 0.946);
     }
 
     div#drawer.active {
         left: 0;
+
         -webkit-transition: left 0.5s cubic-bezier(0.465, 0.183, 0.153, 0.946);
-        -moz-transition: left 0.5s cubic-bezier(0.465, 0.183, 0.153, 0.946);
-        -o-transition: left 0.5s cubic-bezier(0.465, 0.183, 0.153, 0.946);
         transition: left 0.5s cubic-bezier(0.465, 0.183, 0.153, 0.946);
     }
 
@@ -54,7 +71,16 @@ div.nav-header {
         width: $nav-sm-height;
         position: relative;
         text-indent: -9999px;
-        background-color: lighten($nav-bg, 15%);
+        background-color: $nav-bg;
+
+        span.drawer-btn {
+            width: 50%;
+            height: 3px;
+            display: block;
+            margin: 4px auto;
+            position: relative;
+            background-color: $white; 
+        }
     }
 
     button.drawer-btn-container:focus {
@@ -64,8 +90,6 @@ div.nav-header {
     button.drawer-btn-container.active {
         left: 300px;
         -webkit-transition: left 0.5s cubic-bezier(0.465, 0.183, 0.153, 0.946);
-        -moz-transition: left 0.5s cubic-bezier(0.465, 0.183, 0.153, 0.946);
-        -o-transition: left 0.5s cubic-bezier(0.465, 0.183, 0.153, 0.946);
         transition: left 0.5s cubic-bezier(0.465, 0.183, 0.153, 0.946);
     }
 }
