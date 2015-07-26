@@ -79,11 +79,15 @@ div#drawer div.drawer-content ul li span {
     background-color: #2d2d2d;
     border-top: 1px solid #C0392B;
     -webkit-transition: left 0.5s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+    -moz-transition: left 0.5s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+    -o-transition: left 0.5s cubic-bezier(0.465, 0.183, 0.153, 0.946);
     transition: left 0.5s cubic-bezier(0.465, 0.183, 0.153, 0.946);
   }
   div#drawer.active {
     left: 0;
     -webkit-transition: left 0.5s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+    -moz-transition: left 0.5s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+    -o-transition: left 0.5s cubic-bezier(0.465, 0.183, 0.153, 0.946);
     transition: left 0.5s cubic-bezier(0.465, 0.183, 0.153, 0.946);
   }
   button.drawer-btn-container {
@@ -114,6 +118,8 @@ div#drawer div.drawer-content ul li span {
   button.drawer-btn-container.active {
     left: 300px;
     -webkit-transition: left 0.5s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+    -moz-transition: left 0.5s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+    -o-transition: left 0.5s cubic-bezier(0.465, 0.183, 0.153, 0.946);
     transition: left 0.5s cubic-bezier(0.465, 0.183, 0.153, 0.946);
   }
 }
