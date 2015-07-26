@@ -47,11 +47,11 @@
   <ItemGroup>
     <Compile Include="DBOperationResult.cs" />
     <Compile Include="EventRepository.cs" />
+    <Compile Include="EventRepository_UserCode.cs" />
     <Compile Include="EventTypeRepository.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="NPocoDatabaseFactoryClass.cs" />
-    <Compile Include="NPocoModelMappings.cs" />
     <Compile Include="NPocoUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepeatTypeRepository.cs">

@@ -119,39 +119,6 @@ namespace EventsCalendar.Repositories.NPoco
             return Result;
         }
 
-        public IOperationResult Update(EventType eventType, string[] fieldsToUpdate)
-        {
-            ResetError();
-
-            try
-            {
-                _UnitOfWork.db.Update("EventType", "TypeID", eventType);
-                _IOperationResult.RecordID = eventType.TypeID;
-            }
-            catch (Exception ex)
-            {
-                Result = new DBOperationResult(ex);
-            }
-
-            return Result;
-        }
-
-        public IOperationResult Delete(long eventTypeID)
-        {
-            ResetError();
-
-            try
-            {
-                _UnitOfWork.db.Execute("DELETE FROM [dbo].[EventType] WHERE TypeID = @0", eventTypeID);
-            }
-            catch (Exception ex)
-            {
-                Result = new DBOperationResult(ex);
-            }
-
-            return Result;
-        }
-
         public IOperationResult Delete(EventType eventType)
         {
             ResetError();
@@ -159,6 +126,7 @@ namespace EventsCalendar.Repositories.NPoco
             try
             {
                 _UnitOfWork.db.Delete(eventType);
+                //_UnitOfWork.db.Execute("DELETE FROM [dbo].[EventType] WHERE TypeID = @0", eventTypeID);
             }
             catch (Exception ex)
             {

@@ -1,14 +1,89 @@
 ﻿@{
-    Layout = "~/Views/Shared/_MainLayout.cshtml";
+    // Layout Page
+    if (ViewBag.UseLayout)
+    {
+        ViewBag.Title = "Responsive Events Calendar";
+        Layout = "~/Views/Shared/_MainLayout.cshtml";
+    }
+    else
+    {
+        Layout = null;
+    }
+
+    // Page Variables
+    string[] days = new string[7] { "SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT" };
+    string[] months = new string[12] { "JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC" };
+
+    DateTime selectedDate = ViewBag.SelectedDate;
+    DateTime firstOfMonth = new DateTime(selectedDate.Year, selectedDate.Month, 1);
+    DateTime lastOfMonth = new DateTime(selectedDate.Year, selectedDate.Month, DateTime.DaysInMonth(selectedDate.Year, selectedDate.Month));
+    DateTime activeDate, finishDate;
+
+    if (firstOfMonth.DayOfWeek == DayOfWeek.Sunday)
+    {
+        activeDate = firstOfMonth;
+    }
+    else
+    {
+        activeDate = firstOfMonth.AddDays((Array.IndexOf(days, firstOfMonth.DayOfWeek.ToString().Substring(0, 3).ToUpper())) * -1);
+    }
+    
+    if (lastOfMonth.DayOfWeek == DayOfWeek.Saturday)
+    {
+        finishDate = lastOfMonth;
+    }
+    else
+    {
+        finishDate = lastOfMonth.AddDays(7 - Array.IndexOf(days, lastOfMonth.DayOfWeek.ToString().Substring(0, 3).ToUpper()));
+    }
+
 }
 
 <div class="calendar-container">
-    @*<h1>Calendar</h1>*@
-    <table class="calendar-header">
+    <div class="calendar-header">
+        <button class="arrow arrow-left" data-new-month="@firstOfMonth.AddDays(-1).ToShortDateString()">
+            <span class="v-align"></span>
+        </button>
 
-    </table>
+        <div class="header">
+            <span class="v-align">
+                @months[selectedDate.Month - 1] @selectedDate.Year
+            </span>
+        </div>
+
+        <button class="arrow arrow-right" data-new-month="@lastOfMonth.AddDays(1).ToShortDateString()">
+            <span class="v-align">
+            </span>
+        </button>
+    </div>
 
     <table class="calendar-days">
+        <tr>
+            <th>SUN</th>
+            <th>MON</th>
+            <th>TUE</th>
+            <th>WED</th>
+            <th>THU</th>
+            <th>FRI</th>
+            <th>SAT</th>
+        </tr>
 
+        @{
+            short day;
+            while (activeDate < finishDate)
+            {
+                <tr>
+                    @{
+                        day = 0;
+                        while (day < 7)
+                        {
+                            <td>@activeDate.Day</td>
+                            day++;
+                            activeDate = activeDate.AddDays(1);
+                        }
+                    }
+                </tr>
+            }
+        }
     </table>
 </div>

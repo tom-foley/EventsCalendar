@@ -23,8 +23,8 @@ namespace EventsCalendar.WebApp.Controllers
         // GET: Events
         public ActionResult Index()
         {
-
-
+            ViewBag.UseLayout = true;
+            ViewBag.SelectedDate = DateTime.Today;
             return View();
         }
 
@@ -35,13 +35,15 @@ namespace EventsCalendar.WebApp.Controllers
         }
 
         // GET: NewMonth
-        public ActionResult GetMonth()
+        public ActionResult GetMonth(int month, int day, int year)
         {
-            return View();
+            ViewBag.UseLayout = false;
+            ViewBag.SelectedDate = new DateTime(year, month, day);
+            return View("Index");
         }
 
         // GET: NewMonth
-        public ActionResult GetYear()
+        public ActionResult GetYear(int year)
         {
             return View();
         }

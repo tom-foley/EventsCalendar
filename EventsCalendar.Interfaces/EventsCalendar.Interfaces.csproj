@@ -42,6 +42,7 @@
     <Compile Include="IOperationResult.cs" />
     <Compile Include="IUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\IEventRepository_UserCode.cs" />
     <Compile Include="Repositories\IEventRepository.cs" />
     <Compile Include="Repositories\IEventTypeRepository.cs" />
     <Compile Include="Repositories\IRepeatTypeRepository.cs" />

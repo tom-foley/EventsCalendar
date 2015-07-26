@@ -17,10 +17,6 @@ namespace EventsCalendar.Interfaces.Services
 
         IOperationResult UpdateEvent(Event ev);
 
-        IOperationResult UpdateEvent(Event ev, string[] fieldsToUpdate);
-
-        IOperationResult DeleteEvent(long eventId);
-
         IOperationResult DeleteEvent(Event ev);
 
         List<Event> GetAllEvents();

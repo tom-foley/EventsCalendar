@@ -119,39 +119,6 @@ namespace EventsCalendar.Repositories.NPoco
             return Result;
         }
 
-        public IOperationResult Update(RepeatType repeatType, string[] fieldsToUpdate)
-        {
-            ResetError();
-
-            try
-            {
-                _UnitOfWork.db.Update("RepeatType", "TypeID", repeatType);
-                _IOperationResult.RecordID = repeatType.TypeID;
-            }
-            catch (Exception ex)
-            {
-                Result = new DBOperationResult(ex);
-            }
-
-            return Result;
-        }
-
-        public IOperationResult Delete(long repeatTypeID)
-        {
-            ResetError();
-
-            try
-            {
-                _UnitOfWork.db.Execute("DELETE FROM [dbo].[RepeatType] WHERE TypeID = @0", repeatTypeID);
-            }
-            catch (Exception ex)
-            {
-                Result = new DBOperationResult(ex);
-            }
-
-            return Result;
-        }
-
         public IOperationResult Delete(RepeatType repeatType)
         {
             ResetError();
@@ -159,6 +126,7 @@ namespace EventsCalendar.Repositories.NPoco
             try
             {
                 _UnitOfWork.db.Delete(repeatType);
+                //_UnitOfWork.db.Execute("DELETE FROM [dbo].[RepeatType] WHERE TypeID = @0", repeatTypeID);
             }
             catch (Exception ex)
             {

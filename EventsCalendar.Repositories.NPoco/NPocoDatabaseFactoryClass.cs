@@ -13,12 +13,10 @@ namespace EventsCalendar.Repositories.NPoco
     {
         public static DatabaseFactory InitializeFactory()
         {
-            var fluentConfig = FluentMappingConfiguration.Configure(new NPocoModelMappings());
             string connection = ConfigurationManager.ConnectionStrings["ConnectionStringDEBUG"].ConnectionString;
             string provider = ConfigurationManager.ConnectionStrings["ConnectionStringDEBUG"].ProviderName;
             return DatabaseFactory.Config(x =>
             {
-                x.WithFluentConfig(fluentConfig);
                 x.UsingDatabase(() => new Database(connection, provider));
             });
         }
@@ -26,12 +24,10 @@ namespace EventsCalendar.Repositories.NPoco
 
         public static DatabaseFactory InitializeFactory(string connectionString)
         {
-            var fluentConfig = FluentMappingConfiguration.Configure(new NPocoModelMappings());
             string connection = ConfigurationManager.ConnectionStrings["ConnectionStringDEBUG"].ConnectionString;
             string provider = ConfigurationManager.ConnectionStrings["ConnectionStringDEBUG"].ProviderName;
             return DatabaseFactory.Config(x =>
             {
-                x.WithFluentConfig(fluentConfig);
                 x.UsingDatabase(() => new Database(connection, provider));
             });
         }

@@ -19,10 +19,6 @@ namespace EventsCalendar.Interfaces.Repositories
 
         IOperationResult Update(Event ev);
 
-        IOperationResult Update(Event ev, string[] fieldsToUpdate);
-
-        IOperationResult Delete(long eventId);
-
         IOperationResult Delete(Event ev);
 
         IEnumerable<Event> GetAll();

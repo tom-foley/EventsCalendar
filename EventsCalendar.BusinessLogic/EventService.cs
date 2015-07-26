@@ -87,34 +87,6 @@ namespace EventsCalendar.BusinessLogic
             return Result;
         }
 
-        public IOperationResult UpdateEvent(Event ev, string[] fieldsToUpdate)
-        {
-            Result.Reset();
-
-            Result = eventContext.Update(ev, fieldsToUpdate);
-
-            if (Result.IsError)
-            {
-                Result.CustomMessage = "There was a problem updating the requested Event";
-            }
-
-            return Result;
-        }
-
-        public IOperationResult DeleteEvent(long eventID)
-        {
-            Result.Reset();
-
-            Result = eventContext.Delete(eventID);
-
-            if (Result.IsError)
-            {
-                Result.CustomMessage = "There was a problem deleting the requested Event";
-            }
-
-            return Result;
-        }
-
         public IOperationResult DeleteEvent(Event ev)
         {
             Result.Reset();

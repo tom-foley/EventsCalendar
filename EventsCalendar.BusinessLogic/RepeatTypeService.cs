@@ -89,36 +89,6 @@ namespace EventsCalendar.BusinessLogic
             return Result;
         }
 
-        public IOperationResult UpdateRepeatType(RepeatType repeatType, string[] fieldsToUpdate)
-        {
-            Result.Reset();
-
-            Result = repeatTypeContext.Update(repeatType, fieldsToUpdate);
-
-            if (Result.IsError)
-            {
-                Result = repeatTypeContext.Result;
-                Result.CustomMessage = "There was a problem updating the requested RepeatType";
-            }
-
-            return Result;
-        }
-
-        public IOperationResult DeleteRepeatType(long repeatTypeID)
-        {
-            Result.Reset();
-
-            Result = repeatTypeContext.Delete(repeatTypeID);
-
-            if (Result.IsError)
-            {
-                Result = repeatTypeContext.Result;
-                Result.CustomMessage = "There was a problem deleting the requested RepeatType";
-            }
-
-            return Result;
-        }
-
         public IOperationResult DeleteRepeatType(RepeatType repeatType)
         {
             Result.Reset();

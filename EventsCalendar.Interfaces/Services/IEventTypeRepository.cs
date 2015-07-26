@@ -17,10 +17,6 @@ namespace EventsCalendar.Interfaces.Services
 
         IOperationResult UpdateEventType(EventType eventType);
 
-        IOperationResult UpdateEventType(EventType eventType, string[] fieldsToUpdate);
-
-        IOperationResult DeleteEventType(long eventTypeId);
-
         IOperationResult DeleteEventType(EventType eventType);
 
         List<EventType> GetAllEventTypes();

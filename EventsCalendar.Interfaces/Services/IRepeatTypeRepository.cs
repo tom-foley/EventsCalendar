@@ -18,10 +18,6 @@ namespace EventsCalendar.Interfaces.Services
 
         IOperationResult UpdateRepeatType(RepeatType repeatType);
 
-        IOperationResult UpdateRepeatType(RepeatType repeatType, string[] fieldsToUpdate);
-
-        IOperationResult DeleteRepeatType(long repeatTypeId);
-
         IOperationResult DeleteRepeatType(RepeatType repeatType);
 
         List<RepeatType> GetAllRepeatTypes();

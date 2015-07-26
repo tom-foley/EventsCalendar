@@ -20,10 +20,6 @@ namespace EventsCalendar.Interfaces.Repositories
 
         IOperationResult Update(RepeatType repeatType);
 
-        IOperationResult Update(RepeatType repeatType, string[] fieldsToUpdate);
-
-        IOperationResult Delete(long repeatTypeId);
-
         IOperationResult Delete(RepeatType repeatType);
 
         IEnumerable<RepeatType> GetAll();
