@@ -20,5 +20,7 @@ namespace EventsCalendar.Interfaces.Services
         IOperationResult DeleteEvent(Event ev);
 
         List<Event> GetAllEvents();
+
+        List<Event> GetAllEventsFromMonth(int month, int year);
     }
 }

@@ -33,8 +33,9 @@
         app.addArrowListeners = function () {
             for (var i = 0; i < arrows.length; i++) {
                 arrows[i].addEventListener('click', function () {
-                    getNewMonth(this.getAttribute('data-new-month'));
-                }, false)
+                    getNewMonth(this.getAttribute('data-new-month'), this.className.substr(this.className.indexOf('-') + 1));
+                    this.disabled = true;
+                }, false);
             }
         }
 
@@ -57,7 +58,7 @@
             }
         }
 
-        function getNewMonth(route) {
+        function getNewMonth(route, arrowDir) {
             var request = new XMLHttpRequest();
             request.open('GET', '/events/getmonth/' + route, true);
 
@@ -65,8 +66,33 @@
                 if (request.status >= 200 && request.status < 400) {
                     var resp = request.responseText;
                     if (resp) {
-                        mainContent.innerHTML = resp;
-                        app.addArrowListeners();
+                        var newCalendar = document.createElement('div');
+                        newCalendar.classList.add('calendar-container');
+
+                        if (arrowDir == 'left') {
+                            newCalendar.classList.add('pre-left');
+                            mainContent.appendChild(newCalendar);
+                            newCalendar.innerHTML = resp;
+                            mainContent.children[0].classList.add('post-left');
+
+                            window.setTimeout(function () {
+                                mainContent.children[1].classList.remove('pre-left');
+                            }, 25);
+                        } else {
+                            newCalendar.classList.add('pre-right');
+                            mainContent.appendChild(newCalendar);
+                            newCalendar.innerHTML = resp;
+                            mainContent.children[0].classList.add('post-right');
+
+                            window.setTimeout(function () {
+                                mainContent.children[1].classList.remove('pre-right');
+                            }, 25);
+                        }
+
+                        window.setTimeout(function () {
+                            mainContent.removeChild(mainContent.children[0]);
+                            app.addArrowListeners();
+                        }, 500);
                     }
                 } else {
                     // We reached our target server, but it returned an error

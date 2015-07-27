@@ -10,7 +10,10 @@
     @Html.Partial("~/Views/Shared/_Nav.cshtml")
 
     <div class="main-content">
-        @RenderBody()
+        <div class="calendar-container @ViewBag.CalendarCSS">
+
+            @RenderBody()
+        </div>
     </div>
 
     <script src="~/Scripts/site.min.js"></script>

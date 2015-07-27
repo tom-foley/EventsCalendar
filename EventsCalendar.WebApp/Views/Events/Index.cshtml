@@ -1,4 +1,6 @@
-﻿@{
+﻿@model List<EventsCalendar.Models.Event>
+
+@{
     // Layout Page
     if (ViewBag.UseLayout)
     {
@@ -39,51 +41,53 @@
 
 }
 
-<div class="calendar-container">
-    <div class="calendar-header">
-        <button class="arrow arrow-left" data-new-month="@firstOfMonth.AddDays(-1).ToShortDateString()">
-            <span class="v-align"></span>
-        </button>
+<div class="calendar-header">
+    <button class="arrow arrow-left" data-new-month="@firstOfMonth.AddDays(-1).ToShortDateString()">
+        <span class="v-align"></span>
+    </button>
 
-        <div class="header">
-            <span class="v-align">
-                @months[selectedDate.Month - 1] @selectedDate.Year
-            </span>
-        </div>
-
-        <button class="arrow arrow-right" data-new-month="@lastOfMonth.AddDays(1).ToShortDateString()">
-            <span class="v-align">
-            </span>
-        </button>
+    <div class="header">
+        <span class="v-align">
+            @months[selectedDate.Month - 1] @selectedDate.Year
+        </span>
     </div>
 
-    <table class="calendar-days">
-        <tr>
-            <th>SUN</th>
-            <th>MON</th>
-            <th>TUE</th>
-            <th>WED</th>
-            <th>THU</th>
-            <th>FRI</th>
-            <th>SAT</th>
-        </tr>
-
-        @{
-            short day;
-            while (activeDate < finishDate)
-            {
-                <tr>
-                    @{
-                        day = 0;
-                        while (day < 7)
-                        {
-                            <td>@activeDate.Day</td>
-                            day++;
-                            activeDate = activeDate.AddDays(1);
-                        }
-                    }
-                </tr>
-            }
-        }
-    </table>
+    <button class="arrow arrow-right" data-new-month="@lastOfMonth.AddDays(1).ToShortDateString()">
+        <span class="v-align">
+        </span>
+    </button>
 </div>
+
+<table class="calendar-days">
+    <tr>
+        <th>SUN</th>
+        <th>MON</th>
+        <th>TUE</th>
+        <th>WED</th>
+        <th>THU</th>
+        <th>FRI</th>
+        <th>SAT</th>
+    </tr>
+
+    @{
+        short weekday, listPos = 0;
+        while (activeDate < finishDate)
+        {
+            <tr>
+                @{
+                    weekday = 0;
+                    while (weekday < 7)
+                    {
+                        while (activeDate.Equals(Model.ElementAt(listPos)))
+                        {
+                            listPos++;
+                        }
+                        <td>@activeDate.Day</td>
+                        weekday++;
+                        activeDate = activeDate.AddDays(1);
+                    }
+                }
+            </tr>
+        }
+    }
+</table>

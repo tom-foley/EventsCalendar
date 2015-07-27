@@ -120,5 +120,25 @@ namespace EventsCalendar.BusinessLogic
 
             return events;
         }
+
+        public List<Event> GetAllEventsFromMonth(int month, int year)
+        {
+            Result.Reset();
+
+            List<Event> events = eventContext.GetAllEventsFromMonth(month, year).ToList<Event>();
+
+            if (events == null)
+            {
+                Result.CustomMessage = "Could not find the requested Events";
+            }
+
+            if (eventContext.Result.IsError)
+            {
+                Result = eventContext.Result;
+                Result.CustomMessage = "There was a problem retrieving the requested Events";
+            }
+
+            return events;
+        }
     }
 }
