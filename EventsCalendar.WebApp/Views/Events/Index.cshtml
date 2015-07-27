@@ -1,4 +1,4 @@
-﻿@model List<EventsCalendar.Models.Event>
+﻿@model List<DateTime>
 
 @{
     // Layout Page
@@ -70,6 +70,7 @@
     </tr>
 
     @{
+        string cssClass = "";
         short weekday, listPos = 0;
         while (activeDate < finishDate)
         {
@@ -78,11 +79,13 @@
                     weekday = 0;
                     while (weekday < 7)
                     {
-                        while (activeDate.Equals(Model.ElementAt(listPos)))
+                        cssClass = "";
+                        if (listPos < Model.Count() && activeDate == Model.ElementAt(listPos))
                         {
+                            cssClass = "event-day";
                             listPos++;
                         }
-                        <td>@activeDate.Day</td>
+                        <td class="@cssClass">@activeDate.Day</td>
                         weekday++;
                         activeDate = activeDate.AddDays(1);
                     }

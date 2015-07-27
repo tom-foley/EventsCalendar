@@ -9,6 +9,6 @@ namespace EventsCalendar.Interfaces.Repositories
 {
     public partial interface IEventRepository
     {
-        IEnumerable<Event> GetAllEventsFromMonth(int month, int year);
+        IEnumerable<DateTime> GetAllEventsFromMonth(int month, int year);
     }
 }

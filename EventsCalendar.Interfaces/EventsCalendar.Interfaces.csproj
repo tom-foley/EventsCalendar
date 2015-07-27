@@ -46,9 +46,9 @@
     <Compile Include="Repositories\IEventRepository.cs" />
     <Compile Include="Repositories\IEventTypeRepository.cs" />
     <Compile Include="Repositories\IRepeatTypeRepository.cs" />
-    <Compile Include="Services\IEventRepository.cs" />
-    <Compile Include="Services\IEventTypeRepository.cs" />
-    <Compile Include="Services\IRepeatTypeRepository.cs" />
+    <Compile Include="Services\IEventService.cs" />
+    <Compile Include="Services\IEventTypeService.cs" />
+    <Compile Include="Services\IRepeatTypeService.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
