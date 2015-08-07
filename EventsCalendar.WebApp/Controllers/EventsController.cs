@@ -24,7 +24,7 @@ namespace EventsCalendar.WebApp.Controllers
         // GET: Events
         public ActionResult Index()
         {
-            List<DateTime> eventDates = eventService.GetAllEventsFromMonth(DateTime.Today.Month, DateTime.Today.Year);
+            List<DateTime> eventDates = eventService.GetAllEventDatesFromMonth(DateTime.Today.Month, DateTime.Today.Year);
 
             if (eventService.Result.IsError)
             {
@@ -45,7 +45,7 @@ namespace EventsCalendar.WebApp.Controllers
         // GET: NewMonth
         public ActionResult GetMonth(int month, int day, int year)
         {
-            List<DateTime> eventDates = eventService.GetAllEventsFromMonth(month, year);
+            List<DateTime> eventDates = eventService.GetAllEventDatesFromMonth(month, year);
 
             if (eventService.Result.IsError)
             {

@@ -21,6 +21,8 @@ namespace EventsCalendar.Interfaces.Services
 
         List<Event> GetAllEvents();
 
-        List<DateTime> GetAllEventsFromMonth(int month, int year);
+        List<Event> GetAllEventsFromMonth(int year, int month);
+
+        List<DateTime> GetAllEventDatesFromMonth(int year, int month);
     }
 }

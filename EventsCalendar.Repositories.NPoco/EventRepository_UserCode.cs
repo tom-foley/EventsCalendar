@@ -9,15 +9,15 @@ namespace EventsCalendar.Repositories.NPoco
 {
     public partial class EventRepository
     {
-        public IEnumerable<DateTime> GetAllEventsFromMonth(int month, int year)
+        public IEnumerable<Event> GetAllEventsFromMonth(int year, int month)
         {
             ResetError();
 
-            List<DateTime> events = null;
+            List<Event> events = null;
 
             try
             {
-                events = _UnitOfWork.db.Query<DateTime>("SELECT DISTINCT(CONVERT(VARCHAR, CONVERT(DATETIME,[EventStart]),23)) AS StartDate FROM [dbo].[Event] WHERE Month([EventStart]) = @0 AND Year([EventStart]) = @1 ORDER BY StartDate ASC", month, year).ToList<DateTime>();
+                events = _UnitOfWork.db.Query<Event>("SELECT * FROM [dbo].[Event] WHERE Month([EventStart]) = @0 AND Year([EventStart]) = @1 ORDER BY StartDate ASC", month, year).ToList<Event>();
             }
             catch (Exception ex)
             {
@@ -25,6 +25,25 @@ namespace EventsCalendar.Repositories.NPoco
             }
 
             return events;
+        }
+        
+
+        public IEnumerable<DateTime> GetAllEventDatesFromMonth(int year, int month)
+        {
+            ResetError();
+
+            List<DateTime> eventDates = null;
+
+            try
+            {
+                eventDates = _UnitOfWork.db.Query<DateTime>("SELECT DISTINCT(CONVERT(VARCHAR, CONVERT(DATETIME,[EventStart]),23)) AS StartDate FROM [dbo].[Event] WHERE Month([EventStart]) = @0 AND Year([EventStart]) = @1 ORDER BY StartDate ASC", month, year).ToList<DateTime>();
+            }
+            catch (Exception ex)
+            {
+                Result = new DBOperationResult(ex);
+            }
+
+            return eventDates;
         }
     }
 }
