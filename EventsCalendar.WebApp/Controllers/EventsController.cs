@@ -24,7 +24,7 @@ namespace EventsCalendar.WebApp.Controllers
         // GET: Events
         public ActionResult Index()
         {
-            List<DateTime> eventDates = eventService.GetAllEventDatesFromMonth(DateTime.Today.Month, DateTime.Today.Year);
+            //List<DateTime> eventDates = eventService.GetAllEventDatesFromMonth(DateTime.Today.Month, DateTime.Today.Year);
 
             if (eventService.Result.IsError)
             {
@@ -33,10 +33,10 @@ namespace EventsCalendar.WebApp.Controllers
 
             ViewBag.UseLayout = true;
             ViewBag.SelectedDate = DateTime.Today;
-            return View("Index", eventDates);
+            return View("Index"/*, eventDates*/);
         }
 
-        // GET: NewMonth
+        // GET: NewDay
         public ActionResult GetDay()
         {
             return View();
@@ -45,7 +45,7 @@ namespace EventsCalendar.WebApp.Controllers
         // GET: NewMonth
         public ActionResult GetMonth(int month, int day, int year)
         {
-            List<DateTime> eventDates = eventService.GetAllEventDatesFromMonth(month, year);
+            //List<DateTime> eventDates = eventService.GetAllEventDatesFromMonth(month, year);
 
             if (eventService.Result.IsError)
             {
@@ -54,7 +54,7 @@ namespace EventsCalendar.WebApp.Controllers
 
             ViewBag.UseLayout = false;
             ViewBag.SelectedDate = new DateTime(year, month, day);
-            return View("Index", eventDates);
+            return View("Index"/*, eventDates*/);
         }
 
         // GET: NewMonth

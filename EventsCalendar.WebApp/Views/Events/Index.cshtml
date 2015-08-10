@@ -80,7 +80,7 @@
                     while (weekday < 7)
                     {
                         cssClass = "";
-                        if (listPos < Model.Count() && activeDate == Model.ElementAt(listPos))
+                        if (Model != null && listPos < Model.Count() && activeDate == Model.ElementAt(listPos))
                         {
                             cssClass = "event-day";
                             listPos++;
