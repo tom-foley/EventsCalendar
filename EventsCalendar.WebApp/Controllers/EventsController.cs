@@ -24,6 +24,7 @@ namespace EventsCalendar.WebApp.Controllers
         // GET: Events
         public ActionResult Index()
         {
+            /* Uncomment eventDates ONLY if you have working backend which returns events */
             //List<DateTime> eventDates = eventService.GetAllEventDatesFromMonth(DateTime.Today.Month, DateTime.Today.Year);
 
             if (eventService.Result.IsError)
@@ -45,6 +46,7 @@ namespace EventsCalendar.WebApp.Controllers
         // GET: NewMonth
         public ActionResult GetMonth(int month, int day, int year)
         {
+            /* Uncomment eventDates ONLY if you have working backend which returns events */
             //List<DateTime> eventDates = eventService.GetAllEventDatesFromMonth(month, year);
 
             if (eventService.Result.IsError)
@@ -57,7 +59,7 @@ namespace EventsCalendar.WebApp.Controllers
             return View("Index"/*, eventDates*/);
         }
 
-        // GET: NewMonth
+        // GET: NewYear
         public ActionResult GetYear(int year)
         {
             return View();
